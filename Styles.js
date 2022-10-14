@@ -32,7 +32,7 @@ export default StyleSheet.create({
         fontWeight: "600",
         marginBottom: 10
       },
-      result: {
+      calresult: {
         color: "#22C55E",
         fontSize: 40,
         textAlign: "center",

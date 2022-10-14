@@ -22,16 +22,16 @@ export default function App() {
     }
 
     if(gender==='male') {
-      result=((bottles * 0.33) * 8 * 4.5-(burning* time))/(weight * 0.7)
+      calresult=((bottles * 0.33) * 8 * 4.5-(burning* time))/(weight * 0.7)
     }else{
-        result=((bottles * 0.33) * 8 * 4.5-(burning* time))/(weight * 0.6)
+        calresult=((bottles * 0.33) * 8 * 4.5-(burning* time))/(weight * 0.6)
     }
 
-    if(result < 0 || result==0){
-      result = 0
+    if(calresult < 0 || calresult==0){
+      calresult = 0
     }
 
-    setPromilles(result)
+    setPromilles(calresult)
   }
   
   
@@ -51,10 +51,10 @@ export default function App() {
         <Gender setGender={setGender} />
 
         {promilles < 0.5 ?
-        <Text style={StyleSheet.result}>{promilles.toFixed(2)}</Text> : 
+        <Text style={StyleSheet.calresult}>{promilles.toFixed(2)}</Text> : 
         promilles > 1 ?
-        <Text style={[StyleSheet.result, {color: "#EF4444"}]}>{promilles.toFixed(2)}</Text> :
-        <Text style={[StyleSheet.result, {color: "#EAB308"}]}>{promilles.toFixed(2)}</Text>
+        <Text style={[StyleSheet.calresult, {color: "#EF4444"}]}>{promilles.toFixed(2)}</Text> :
+        <Text style={[StyleSheet.calresult, {color: "#EAB308"}]}>{promilles.toFixed(2)}</Text>
       }
       <Button title="Calculate" onPress={calculate} />
     </ScrollView>
